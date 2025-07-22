@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="test-logo">
+            <img src="./Assets/TestLogo.svg" alt="Test Logo">
+        </div>
+
+        <nav aria-label="Primary Navigation">
+            <ul>
+                <li>
+                    <a href="#overview" aria-current="page">
+                        <img src="./Assets/home_FILL0_wght300_GRAD0_opsz24.svg" alt="Home Icon">Overview
+                    </a>
+                </li>
+                <li>
+                    <a href="#patients">
+                        <img src="./Assets/group_FILL0_wght300_GRAD0_opsz24.svg" alt="Patients Icon">Patients
+                    </a>
+                </li>
+                <li>
+                    <a href="#schedule">
+                        <img src="./Assets/calendar_today_FILL0_wght300_GRAD0_opsz24.svg" alt="Calendar Icon">Schedule
+                    </a>
+                </li>
+                <li>
+                    <a href="#message">
+                        <img src="./Assets/chat_bubble_FILL0_wght300_GRAD0_opsz24.svg" alt="Chat Icon">Message
+                    </a>
+                </li>
+                <li>
+                    <a href="#transactions">
+                        <img src="./Assets/credit_card_FILL0_wght300_GRAD0_opsz24.svg"
+                            alt="Credit Card Icon">Transactions
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="right-group">
+            <div class="user-profile">
+                <img src="./Assets/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png"
+                    alt="Dr. Jose Simmons">
+                <div class="user-name-and-title">
+                    <p class="user-name">Dr. Jose Simmons</p>
+                    <p class="user-title">General Practitioner</p>
+                </div>
+            </div>
+
+            <div class="divider" aria-hidden="true"></div>
+
+            <div class="icon-group" aria-label="User settings">
+                <button aria-label="Open settings menu">
+                    <img src="./Assets/settings_FILL0_wght300_GRAD0_opsz24.svg" alt="Settings Icon">
+                </button>
+                <button aria-label="Open user options menu">
+                    <img src="./Assets/more_vert_FILL0_wght300_GRAD0_opsz24.svg" alt="More Icon">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard">
+        <!-- Sidebar: Patients List -->
+        <aside class="patients-list-containter" aria-label="Patients List">
+            <div class="patients-header">
+                <h2>Patients</h2>
+                <img src="./Assets/search_FILL0_wght300_GRAD0_opsz24.svg" alt="Search Icon">
+            </div>
+            <ul class="patients-list" id="patientsList">
+                <li></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <section class="diagnosis-history">
+                <div class="title-and-chart">
+                    <h2>Diagnosis History</h2>
+                    <div class="chart-container">
+                        <div class="title-and-chart-container">
+                            <div class="title-container">
+                                <h3>Blood pressure</h3>
+                                <div class="dateframe">
+                                    <div>
+                                        <p id="sixMonths">Last 6 month</p>
+                                        <img src="./Assets/expand_more_FILL0_wght300_GRAD0_opsz24.svg"
+                                            alt="Expand to select a timeframe" id="expandIcon" aria-expanded="false">
+                                    </div>
+                                    <div class="dropdown-menu" id="dropdownMenu">
+                                        <p id="showAll">Show all diagnosis</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <canvas class="chart" id="bloodPressureChart"></canvas>
+                        </div>
+                        <div class="chart-info-container" id="chartInfoContainer">
+                            <div class="chart-info">
+                                <!-- <p>Systolic</p> -->
+                            </div>
+                            <!-- <div class="chart-divider"></div> -->
+                            <div class="chart-info">
+                                <!-- <p id="diastolic">Diastolic</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vitals" id="vitals">
+                </div>
+            </section>
+
+            <section class="diagnostic-list">
+                <h2>Diagnostic List</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Problem/Diagnosis</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="scrollable-tbody">
+                        <table>
+                            <tbody id="tableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Sidebar: Patient Details -->
+        <aside class="right-sidebar">
+            <section class="selected-patient-container">
+                <div class="selected-patient-detail-container">
+                    <div class="avatar-and-name">
+                        <img src="./Assets/Layer 2.png" alt="Profile Picture of Jessica taylor">
+                        <p>Jessica Taylor</p>
+                    </div>
+
+                    <ul class="selected-patient" id="selectedPatient">
+                        <li></li>
+                    </ul>
+                </div>
+
+                <div class="btn-div">
+                    <button class="show-all-btn" aria-label="Show all patient information">Show All Information</button>
+                </div>
+            </section>
+
+            <section class="selected-patient-lab-result">
+                <h2>Lab Result</h2>
+                <ul class="test-name-container" id="testNameContainer">
+                    <li></li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="config.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
